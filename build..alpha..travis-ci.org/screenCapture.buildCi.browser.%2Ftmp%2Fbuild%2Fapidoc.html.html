@@ -1,0 +1,1020 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/nbubna/Case#readme">case (v1.5.2)</a>
+</h1>
+<h4>Extensible string utility for converting, identifying and flipping string case</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.case">module case</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.case.camel">
+            function <span class="apidocSignatureSpan">case.</span>camel
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.case.capital">
+            function <span class="apidocSignatureSpan">case.</span>capital
+            <span class="apidocSignatureSpan">(s, fill, deapostrophe)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.case.constant">
+            function <span class="apidocSignatureSpan">case.</span>constant
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.case.flip">
+            function <span class="apidocSignatureSpan">case.</span>flip
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.case.header">
+            function <span class="apidocSignatureSpan">case.</span>header
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.case.kebab">
+            function <span class="apidocSignatureSpan">case.</span>kebab
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.case.lower">
+            function <span class="apidocSignatureSpan">case.</span>lower
+            <span class="apidocSignatureSpan">(s, fill, deapostrophe)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.case.of">
+            function <span class="apidocSignatureSpan">case.</span>of
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.case.pascal">
+            function <span class="apidocSignatureSpan">case.</span>pascal
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.case.random">
+            function <span class="apidocSignatureSpan">case.</span>random
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.case.sentence">
+            function <span class="apidocSignatureSpan">case.</span>sentence
+            <span class="apidocSignatureSpan">(s, names)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.case.snake">
+            function <span class="apidocSignatureSpan">case.</span>snake
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.case.squish">
+            function <span class="apidocSignatureSpan">case.</span>squish
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.case.title">
+            function <span class="apidocSignatureSpan">case.</span>title
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.case.type">
+            function <span class="apidocSignatureSpan">case.</span>type
+            <span class="apidocSignatureSpan">(type, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.case.upper">
+            function <span class="apidocSignatureSpan">case.</span>upper
+            <span class="apidocSignatureSpan">(s, fill, deapostrophe)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">case.</span>_</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.case._">module case._</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.case._.cap">
+            function <span class="apidocSignatureSpan">case._.</span>cap
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.case._.deapostrophe">
+            function <span class="apidocSignatureSpan">case._.</span>deapostrophe
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.case._.decap">
+            function <span class="apidocSignatureSpan">case._.</span>decap
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.case._.fill">
+            function <span class="apidocSignatureSpan">case._.</span>fill
+            <span class="apidocSignatureSpan">(s, fill, deapostrophe)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.case._.low">
+            function <span class="apidocSignatureSpan">case._.</span>low
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.case._.prep">
+            function <span class="apidocSignatureSpan">case._.</span>prep
+            <span class="apidocSignatureSpan">(s, fill, pascal, upper)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.case._.regexps">
+            function <span class="apidocSignatureSpan">case._.</span>regexps
+            <span class="apidocSignatureSpan">(symbols, lowers, uppers, impropers)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.case._.relax">
+            function <span class="apidocSignatureSpan">case._.</span>relax
+            <span class="apidocSignatureSpan">(m, before, acronym, caps)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.case._.unicodes">
+            function <span class="apidocSignatureSpan">case._.</span>unicodes
+            <span class="apidocSignatureSpan">(s, prefix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.case._.up">
+            function <span class="apidocSignatureSpan">case._.</span>up
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">case._.</span>re</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">case._.</span>types</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.case" id="apidoc.module.case">module case</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.case.camel" id="apidoc.element.case.camel">
+        function <span class="apidocSignatureSpan">case.</span>camel
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">camel = function (s) {
+    return _.decap(Case.pascal(s));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Case.capital('foo_v_bar') -&gt; 'Foo V Bar'
+```
+
+### Code Helpers
+```javascript
+Case.snake('Foo bar!')   -&gt; 'foo_bar'
+Case.pascal('foo.bar')   -&gt; 'FooBar'
+Case.<span class="apidocCodeKeywordSpan">camel</span>('foo, bar')   -&gt; 'fooBar'
+Case.kebab('Foo? Bar.')  -&gt; 'foo-bar'
+Case.header('fooBar=')   -&gt; 'Foo-Bar'
+Case.constant('Foo-Bar') -&gt; 'FOO_BAR'
+```
+
+
+### UI Helpers
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.case.capital" id="apidoc.element.case.capital">
+        function <span class="apidocSignatureSpan">case.</span>capital
+        <span class="apidocSignatureSpan">(s, fill, deapostrophe)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">capital = function (s, fill, deapostrophe) {
+    return _.fill(_.prep(s).replace(re.capitalize, function(m, border, letter) {
+        return border+_.up.call(letter);
+    }), fill, deapostrophe);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Each of the following functions will first "undo" previous case manipulations
+before applying the desired case to the given string.
+
+### Foundations
+```javascript
+Case.upper('foo_bar')     -&gt; 'FOO BAR'
+Case.lower('fooBar')      -&gt; 'foo bar'
+Case.<span class="apidocCodeKeywordSpan">capital</span>('foo_v_bar') -&gt; 'Foo V Bar'
+```
+
+### Code Helpers
+```javascript
+Case.snake('Foo bar!')   -&gt; 'foo_bar'
+Case.pascal('foo.bar')   -&gt; 'FooBar'
+Case.camel('foo, bar')   -&gt; 'fooBar'
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.case.constant" id="apidoc.element.case.constant">
+        function <span class="apidocSignatureSpan">case.</span>constant
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">constant = function (s) {
+    return Case.upper(s, '_', true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+### Code Helpers
+```javascript
+Case.snake('Foo bar!')   -&gt; 'foo_bar'
+Case.pascal('foo.bar')   -&gt; 'FooBar'
+Case.camel('foo, bar')   -&gt; 'fooBar'
+Case.kebab('Foo? Bar.')  -&gt; 'foo-bar'
+Case.header('fooBar=')   -&gt; 'Foo-Bar'
+Case.<span class="apidocCodeKeywordSpan">constant</span>('Foo-Bar') -&gt; 'FOO_BAR'
+```
+
+
+### UI Helpers
+```javascript
+Case.title('foo v. bar')                    -&gt; 'Foo v. Bar'
+Case.sentence('"foo!" said bar', ['Bar'])   -&gt; '"Foo!" said Bar'
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.case.flip" id="apidoc.element.case.flip">
+        function <span class="apidocSignatureSpan">case.</span>flip
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">flip = function (s) {
+    return s.replace(/\w/g, function(l) {
+        return (l == _.up.call(l) ? _.low : _.up).call(l);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+### Utilities
+```javascript
+Case.of('foo')          -&gt; 'lower'
+Case.of('foo_bar')      -&gt; 'snake'
+Case.of('Foo v Bar')    -&gt; 'title'
+Case.of('foo_ Bar')     -&gt; undefined
+
+Case.<span class="apidocCodeKeywordSpan">flip</span>('FlipMe')     -&gt; 'fLIPmE'
+Case.flip('TEST THIS!') -&gt; 'test this!'
+
+Case.random('Hello!')   -&gt; 'hElLO!'
+```
+* `Case.of(str)`: identifies the case of a string, returns undefined if it doesn't match a known type
+* `Case.flip(str)`: reverses the case of letters, no other changes
+* `Case.random(str)`: randomizes the case of letters, no other changes
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.case.header" id="apidoc.element.case.header">
+        function <span class="apidocSignatureSpan">case.</span>header
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">header = function (s) {
+    return Case.capital(s, '-', true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### Code Helpers
+```javascript
+Case.snake('Foo bar!')   -&gt; 'foo_bar'
+Case.pascal('foo.bar')   -&gt; 'FooBar'
+Case.camel('foo, bar')   -&gt; 'fooBar'
+Case.kebab('Foo? Bar.')  -&gt; 'foo-bar'
+Case.<span class="apidocCodeKeywordSpan">header</span>('fooBar=')   -&gt; 'Foo-Bar'
+Case.constant('Foo-Bar') -&gt; 'FOO_BAR'
+```
+
+
+### UI Helpers
+```javascript
+Case.title('foo v. bar')                    -&gt; 'Foo v. Bar'
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.case.kebab" id="apidoc.element.case.kebab">
+        function <span class="apidocSignatureSpan">case.</span>kebab
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">kebab = function (s) {
+    return Case.lower(s, '-', true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+### Code Helpers
+```javascript
+Case.snake('Foo bar!')   -&gt; 'foo_bar'
+Case.pascal('foo.bar')   -&gt; 'FooBar'
+Case.camel('foo, bar')   -&gt; 'fooBar'
+Case.<span class="apidocCodeKeywordSpan">kebab</span>('Foo? Bar.')  -&gt; 'foo-bar'
+Case.header('fooBar=')   -&gt; 'Foo-Bar'
+Case.constant('Foo-Bar') -&gt; 'FOO_BAR'
+```
+
+
+### UI Helpers
+```javascript
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.case.lower" id="apidoc.element.case.lower">
+        function <span class="apidocSignatureSpan">case.</span>lower
+        <span class="apidocSignatureSpan">(s, fill, deapostrophe)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">lower = function (s, fill, deapostrophe) {
+    return _.fill(_.low.call(_.prep(s, fill)), fill, deapostrophe);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+## Documentation
+Each of the following functions will first "undo" previous case manipulations
+before applying the desired case to the given string.
+
+### Foundations
+```javascript
+Case.upper('foo_bar')     -&gt; 'FOO BAR'
+Case.<span class="apidocCodeKeywordSpan">lower</span>('fooBar')      -&gt; 'foo bar'
+Case.capital('foo_v_bar') -&gt; 'Foo V Bar'
+```
+
+### Code Helpers
+```javascript
+Case.snake('Foo bar!')   -&gt; 'foo_bar'
+Case.pascal('foo.bar')   -&gt; 'FooBar'
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.case.of" id="apidoc.element.case.of">
+        function <span class="apidocSignatureSpan">case.</span>of
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">of = function (s) {
+    for (var i=0,m=_.types.length; i&lt;m; i++) {
+        if (Case[_.types[i]](s) === s){ return _.types[i]; }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### Extending Case
+```javascript
+Case.type('bang', function(s) {
+    return Case.upper(s, '!')+'!';
+});
+Case.bang('bang')       -&gt; 'BANG!'
+Case.<span class="apidocCodeKeywordSpan">of</span>('TEST!THIS!')   -&gt; 'bang'
+```
+`Case.type(name, fn)`: extends Case, creating a new function on `Case` and adding `Case.of` support automatically.
+
+
+### Utilities
+```javascript
+Case.of('foo')          -&gt; 'lower'
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.case.pascal" id="apidoc.element.case.pascal">
+        function <span class="apidocSignatureSpan">case.</span>pascal
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pascal = function (s) {
+    return _.fill(_.prep(s, false, true).replace(re.pascal, function(m, border, letter) {
+        return _.up.call(letter);
+    }), '', true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Case.lower('fooBar')      -&gt; 'foo bar'
+Case.capital('foo_v_bar') -&gt; 'Foo V Bar'
+```
+
+### Code Helpers
+```javascript
+Case.snake('Foo bar!')   -&gt; 'foo_bar'
+Case.<span class="apidocCodeKeywordSpan">pascal</span>('foo.bar')   -&gt; 'FooBar'
+Case.camel('foo, bar')   -&gt; 'fooBar'
+Case.kebab('Foo? Bar.')  -&gt; 'foo-bar'
+Case.header('fooBar=')   -&gt; 'Foo-Bar'
+Case.constant('Foo-Bar') -&gt; 'FOO_BAR'
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.case.random" id="apidoc.element.case.random">
+        function <span class="apidocSignatureSpan">case.</span>random
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">random = function (s) {
+    return s.replace(/\w/g, function(l) {
+        return (Math.round(Math.random()) ? _.up : _.low).call(l);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Case.of('foo_bar')      -&gt; 'snake'
+Case.of('Foo v Bar')    -&gt; 'title'
+Case.of('foo_ Bar')     -&gt; undefined
+
+Case.flip('FlipMe')     -&gt; 'fLIPmE'
+Case.flip('TEST THIS!') -&gt; 'test this!'
+
+Case.<span class="apidocCodeKeywordSpan">random</span>('Hello!')   -&gt; 'hElLO!'
+```
+* `Case.of(str)`: identifies the case of a string, returns undefined if it doesn't match a known type
+* `Case.flip(str)`: reverses the case of letters, no other changes
+* `Case.random(str)`: randomizes the case of letters, no other changes
+
+
+## Release History
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.case.sentence" id="apidoc.element.case.sentence">
+        function <span class="apidocSignatureSpan">case.</span>sentence
+        <span class="apidocSignatureSpan">(s, names)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sentence = function (s, names) {
+    s = Case.lower(s).replace(re.sentence, function(m, prelude, letter) {
+        return prelude + _.up.call(letter);
+    });
+    if (names) {
+        names.forEach(function(name) {
+            s = s.replace(new RegExp('\\b'+Case.lower(name)+'\\b', "g"), _.cap);
+        });
+    }
+    return s;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Case.constant('Foo-Bar') -&gt; 'FOO_BAR'
+```
+
+
+### UI Helpers
+```javascript
+Case.title('foo v. bar')                    -&gt; 'Foo v. Bar'
+Case.<span class="apidocCodeKeywordSpan">sentence</span>('"foo!" said bar', ['Bar'])   -&gt; '
+;"Foo!" said Bar'
+```
+`Case.sentence(str, names)` accepts an array of proper names that should be capitalized,
+regardless of location in the sentence.  This function is specialized, but useful
+when dealing with input generated with capslock on (i.e. everything my grandma types).
+
+
+### Custom Casing
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.case.snake" id="apidoc.element.case.snake">
+        function <span class="apidocSignatureSpan">case.</span>snake
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">snake = function (s) {
+    return Case.lower(s, '_', true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Case.upper('foo_bar')     -&gt; 'FOO BAR'
+Case.lower('fooBar')      -&gt; 'foo bar'
+Case.capital('foo_v_bar') -&gt; 'Foo V Bar'
+```
+
+### Code Helpers
+```javascript
+Case.<span class="apidocCodeKeywordSpan">snake</span>('Foo bar!')   -&gt; 'foo_bar'
+Case.pascal('foo.bar')   -&gt; 'FooBar'
+Case.camel('foo, bar')   -&gt; 'fooBar'
+Case.kebab('Foo? Bar.')  -&gt; 'foo-bar'
+Case.header('fooBar=')   -&gt; 'Foo-Bar'
+Case.constant('Foo-Bar') -&gt; 'FOO_BAR'
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.case.squish" id="apidoc.element.case.squish">
+        function <span class="apidocSignatureSpan">case.</span>squish
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">squish = function (s) {
+    return _.fill(_.prep(s, false, true).replace(re.pascal, function(m, border, letter) {
+        return _.up.call(letter);
+    }), '', true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.case.title" id="apidoc.element.case.title">
+        function <span class="apidocSignatureSpan">case.</span>title
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">title = function (s) {
+    return Case.capital(s).replace(re.improper, function(small, p, i, s) {
+        return i &gt; 0 &amp;&amp; i &lt; s.lastIndexOf(' ') ? _.low.call(small) : small;
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Case.header('fooBar=')   -&gt; 'Foo-Bar'
+Case.constant('Foo-Bar') -&gt; 'FOO_BAR'
+```
+
+
+### UI Helpers
+```javascript
+Case.<span class="apidocCodeKeywordSpan">title</span>('foo v. bar')                    -&gt; 'Foo v. Bar'
+Case.sentence('"foo!" said bar', ['Bar'])   -&gt; '"Foo!" said Bar'
+```
+`Case.sentence(str, names)` accepts an array of proper names that should be capitalized,
+regardless of location in the sentence.  This function is specialized, but useful
+when dealing with input generated with capslock on (i.e. everything my grandma types).
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.case.type" id="apidoc.element.case.type">
+        function <span class="apidocSignatureSpan">case.</span>type
+        <span class="apidocSignatureSpan">(type, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">type = function (type, fn) {
+    Case[type] = fn;
+    _.types.push(type);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+a third optional boolean argument indicating if apostrophes are to be stripped out or left in.
+For example, programmatic case changes (snake, kebab, pascal, camel, constant) are best without
+apostrophes, but user-facing ones (title, sentence) do not want "don't" turned into "Dont".
+
+
+### Extending Case
+```javascript
+Case.<span class="apidocCodeKeywordSpan">type</span>('bang', function(s) {
+    return Case.upper(s, '!')+'!';
+});
+Case.bang('bang')       -&gt; 'BANG!'
+Case.of('TEST!THIS!')   -&gt; 'bang'
+```
+`Case.type(name, fn)`: extends Case, creating a new function on `Case` and adding `Case.of` support automatically.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.case.upper" id="apidoc.element.case.upper">
+        function <span class="apidocSignatureSpan">case.</span>upper
+        <span class="apidocSignatureSpan">(s, fill, deapostrophe)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">upper = function (s, fill, deapostrophe) {
+    return _.fill(_.up.call(_.prep(s, fill, false, true)), fill, deapostrophe);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## Documentation
+Each of the following functions will first "undo" previous case manipulations
+before applying the desired case to the given string.
+
+### Foundations
+```javascript
+Case.<span class="apidocCodeKeywordSpan">upper</span>('foo_bar')     -&gt; 'FOO BAR'
+Case.lower('fooBar')      -&gt; 'foo bar'
+Case.capital('foo_v_bar') -&gt; 'Foo V Bar'
+```
+
+### Code Helpers
+```javascript
+Case.snake('Foo bar!')   -&gt; 'foo_bar'
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.case._" id="apidoc.module.case._">module case._</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.case._.cap" id="apidoc.element.case._.cap">
+        function <span class="apidocSignatureSpan">case._.</span>cap
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cap = function (s) {
+    return _.up.call(s.charAt(0))+s.slice(1);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.case._.deapostrophe" id="apidoc.element.case._.deapostrophe">
+        function <span class="apidocSignatureSpan">case._.</span>deapostrophe
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">deapostrophe = function (s) {
+    return s.replace(re.apostrophe, '');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.case._.decap" id="apidoc.element.case._.decap">
+        function <span class="apidocSignatureSpan">case._.</span>decap
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decap = function (s) {
+    return _.low.call(s.charAt(0))+s.slice(1);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.case._.fill" id="apidoc.element.case._.fill">
+        function <span class="apidocSignatureSpan">case._.</span>fill
+        <span class="apidocSignatureSpan">(s, fill, deapostrophe)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fill = function (s, fill, deapostrophe) {
+    if (fill != null) {
+        s = s.replace(re.fill, function(m, next) {
+            return next ? fill + next : '';
+        });
+    }
+    if (deapostrophe) {
+        s = _.deapostrophe(s);
+    }
+    return s;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.case._.low" id="apidoc.element.case._.low">
+        function <span class="apidocSignatureSpan">case._.</span>low
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toLowerCase() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.case._.prep" id="apidoc.element.case._.prep">
+        function <span class="apidocSignatureSpan">case._.</span>prep
+        <span class="apidocSignatureSpan">(s, fill, pascal, upper)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">prep = function (s, fill, pascal, upper) {
+    s = s == null ? '' : s + '';// force to string
+    if (!upper &amp;&amp; re.upper.test(s)) {
+        s = _.low.call(s);
+    }
+    if (!fill &amp;&amp; !re.hole.test(s)) {
+        var holey = _.fill(s, ' ');
+        if (re.hole.test(holey)) {
+            s = holey;
+        }
+    }
+    if (!pascal &amp;&amp; !re.room.test(s)) {
+        s = s.replace(re.relax, _.relax);
+    }
+    return s;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.case._.regexps" id="apidoc.element.case._.regexps">
+        function <span class="apidocSignatureSpan">case._.</span>regexps
+        <span class="apidocSignatureSpan">(symbols, lowers, uppers, impropers)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">regexps = function (symbols, lowers, uppers, impropers) {
+    symbols = symbols || basicSymbols;
+    lowers = lowers || baseLowerCase;
+    uppers = uppers || baseUpperCase;
+    impropers = impropers || improperInTitle;
+    return {
+        capitalize: new RegExp('(^|['+symbols+'])(['+lowers+'])', 'g'),
+        pascal: new RegExp('(^|['+symbols+'])+(['+lowers+uppers+'])', 'g'),
+        fill: new RegExp('['+symbols+']+(.|$)','g'),
+        sentence: new RegExp('(^\\s*|[\\?\\!\\.]+"?\\s+"?|,\\s+")(['+lowers+'])', 'g'),
+        improper: new RegExp('\\b('+impropers+')\\b', 'g'),
+        relax: new RegExp('([^'+uppers+'])(['+uppers+']*)(['+uppers+'])(?=['+lowers+']|$)', 'g'),
+        upper: new RegExp('^[^'+lowers+']+$'),
+        hole: /[^\s]\s[^\s]/,
+        apostrophe: /'/g,
+        room: new RegExp('['+symbols+']')
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.case._.relax" id="apidoc.element.case._.relax">
+        function <span class="apidocSignatureSpan">case._.</span>relax
+        <span class="apidocSignatureSpan">(m, before, acronym, caps)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">relax = function (m, before, acronym, caps) {
+    return before + ' ' + (acronym ? acronym+' ' : '') + caps;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.case._.unicodes" id="apidoc.element.case._.unicodes">
+        function <span class="apidocSignatureSpan">case._.</span>unicodes
+        <span class="apidocSignatureSpan">(s, prefix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unicodes = function (s, prefix) {
+    prefix = prefix || '';
+    return s.replace(/(^|-)/g, '$1\\u'+prefix).replace(/,/g, '\\u'+prefix);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.case._.up" id="apidoc.element.case._.up">
+        function <span class="apidocSignatureSpan">case._.</span>up
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toUpperCase() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
